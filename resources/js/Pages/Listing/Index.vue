@@ -4,6 +4,7 @@
             <div>
                 <!-- <Link :href="`/listing/${listing.id}`"> -->
                 <Link :href="route('listing.show', {listing: listing.id})">
+                    <Price :price="listing.price" class="text-2xl font-bold" />
                     <ListingSpace :listing="listing" class="text-lg"/>
                     <ListingAddress :listing="listing" class="text-gray-500"/>
                 </Link>
@@ -25,6 +26,7 @@
     import ListingAddress from '../../Components/ListingAddress.vue';
     import ListingSpace from '../../Components/ListingSpace.vue';
     import Box from '../../Components/UI/Box.vue';
+    import Price from '../../Components/Price.vue';
     defineProps(
         {
             'listings': Array
